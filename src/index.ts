@@ -36,7 +36,7 @@ app.post("/api/process-image", async(c) => {
 						},
 						location: {
 							type: "string",
-							description: "The closest assumed location in the format of City, State, Country. eg: Los Angeles, California, USA"
+							description: "The closest assumed location in the format of Neighborhood, City, State, Country. eg: Los Feliz, Los Angeles, California, USA"
 						},
 						latitude: {
 							type: "number",

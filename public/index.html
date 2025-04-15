@@ -3,29 +3,29 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hello, World!</title>
+		<title>Image Location Processor</title>
+		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<h1 id="heading"></h1>
-		<button id="button" type="button">Fetch a random UUID</button>
-		<output id="random" for="button"></output>
-		<script>
-			fetch('/message')
-				.then((resp) => resp.text())
-				.then((text) => {
-					const h1 = document.getElementById('heading');
-					h1.textContent = text;
-				});
-
-			const button = document.getElementById("button");
-			button.addEventListener("click", () => {
-				fetch('/random')
-					.then((resp) => resp.text())
-					.then((text) => {
-						const random = document.getElementById('random');
-						random.textContent = text;
-					});
-			});
-		</script>
+		<div class="container">
+			<h1>Image Location Processor</h1>
+			
+			<div class="drag-area" id="dropZone">
+				<p>Drag & drop image here or click to upload</p>
+				<input type="file" id="fileInput" accept="image/*" style="display:none">
+				<img id="imagePreview">
+			</div>
+			
+			<div class="input-group">
+				<label for="caption">Caption:</label>
+				<input type="text" id="caption" placeholder="Enter image caption">
+			</div>
+			
+			<button id="processButton" type="button" disabled>Process Image</button>
+			
+			<div id="result"></div>
+		</div>
+		
+		<script src="script.js"></script>
 	</body>
 </html>
